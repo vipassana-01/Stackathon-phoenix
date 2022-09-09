@@ -1,0 +1,136 @@
+body{
+    margin:0;
+    position: absolute;
+    display: flex;
+    background-color:rgb(110, 243, 110);
+}
+.content{
+    height:1600px;
+    width:1000px;
+    background-color:rgb(141, 230, 248);
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    position: relative;
+    left:175px;
+    top:25px;
+}
+
+
+.right{
+    left:300px;
+}
+.left{
+    left:50px;
+}
+.content{
+    text-align: center;
+}
+.main{
+    position: relative;
+    color:red;
+    top:30px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.context{
+    position: relative;
+    height:300px;
+    width:600px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    top:60px;
+    left:25px;
+    overflow: scroll;
+    
+}
+.image{
+    position: relative;
+    width:300px;
+    top:-245px;
+    left:312.5px;
+    height:300px;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+.info{
+    text-align: center;
+    color:black;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.f{
+    font-size: 20px;
+
+}
+.b{
+    text-align: left;
+}
+.a{
+    text-align: left;
+}
+.header{
+    position: relative;
+    font-size: 30px;
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    color:black;
+}
+.s{
+    color:darkgoldenrod;
+    top:-230px;
+}
+.Symptoms{
+    position: relative;
+    height: 300px;
+    width:950px;
+    background-color:aliceblue;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    left:25px;
+    top:-200px;
+    overflow: scroll;
+}
+.r{
+    color:rgb(9, 41, 137);
+    top:-180px;
+}
+.Remedies{
+    position: relative;
+    height: 600px;
+    width:950px;
+    background-color:aliceblue;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    left:25px;
+    top:-170px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;  
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+.sy{
+    text-align: left;
+}
+.lite{
+    color: red;
+}
