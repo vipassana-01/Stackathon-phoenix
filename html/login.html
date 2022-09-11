@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Login</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script>
+	function SubForm (){
+		$.ajax({
+			url:'https://api.apispreadsheets.com/data/NvuVyWzUQ2DTws0e/',
+			type:'post',
+			data:$("#myForm").serializeArray(),
+			success: function(){
+			  alert("Form Data Submitted :)")
+			},
+			error: function(){
+			  alert("There was an error :(")
+			}
+		});
+	}
+	</script>
+  <style type="text/css" rel="StyleSheet">
+	.class
+{
+	background-color: beige;
+	
+ } 
+h1{ text-align: center;
+	text-shadow:2px 2px #090230;
+
+  }
+
+body
+	{
+		margin:0;
+		padding:0;
+		font-family: serif;
+		background:url(peakpx.jpg);
+		background-size:cover;
+		background-image:url("bg-login.jpeg");
+	}
+.box
+{
+	width:300px;
+    padding:35px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	border-radius: 24px;
+	transition:0.24px;
+	transform:translate(-50%,-50%);
+	background: rgb(162, 135, 199);
+	text-align:center;
+	
+}
+.box h1{
+color:rgb(240, 234, 234);
+text-transform:uppercase;
+font-weight: 100;
+font-family: 'Trebuchet MS', sans-serif;
+}
+.box input[type="text"],.box input[type="password"]
+{
+	border:0;
+	background-color: rgb(201, 255, 255);
+	display:black;
+	margin:20px auto;
+    text-align: center;
+	font-family: 'Trebuchet MS', sans-serif;
+    border:1px solid rgb(10, 4, 1);
+ 	padding:14px 10px;
+	width:200px;
+	outline:none;
+	color:rgb(21, 3, 3);
+	border-radius: 20px;
+	transition:0.1px;
+}
+.box input[type="text"]:focus,.box input[type="password"].focus{
+width:270px;
+border-color: rgb(250, 236, 236);
+}
+
+.box input[type="submit"]
+{
+	border:0;
+	background-color: rgb(4, 2, 21);
+	display:rgb(223, 220, 220);
+	margin:20px auto;
+    text-align: center;
+    border:1px solid rgb(46, 21, 209);
+ 	padding:12px 10px;
+	width:100px;
+	outline:none;
+	color:rgb(233, 233, 240);
+	border-radius: 24px;
+	transition:0.25px;
+	cursor:pointer;
+}
+.box input[type="submit"]:hover
+{
+background: rgb(49, 122, 231);
+}
+.enter{
+	position: relative;
+	left:650px;
+	top:405px;
+	border-radius: 12px;
+	border-color: black;
+	border-style: solid;
+    border: 1px solid black;
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+    align-items: center;
+    height: 40px;
+    width: 60px;
+
+}
+.enter:hover{
+	background-color: rgb(231, 221, 236);
+}
+</style>
+
+	
+
+
+
+ <body>
+	
+	<div class="login">
+
+	<h1> Sreenidhi Institue of Science and Technology</h1>
+	<form class="box" id="myForm" action="login.html" method="POST">
+		<h1>Login</h1>
+		<td>
+			<tr > <p style="color:white;">USERNAME: </p><input type="text" name="username" placeholder="enter username/Email" id="username/Email" style="color:rgb(1, 1, 16);" required>
+			</tr>
+		</td>
+		<td>
+			<tr><p style="color:rgb(245, 245, 248);">PASSWORD: </p><input type="password" name="password" placeholder="enter password" id="password" style="color:black" required>
+			</tr></td>
+		</tr>
+		
+	</form>
+	<button onclick="SubForm()" class="enter"> submit</button>
+ </body>
+</html>
