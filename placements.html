@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placements</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: rgba(27, 31, 34);
+        }
+        
+        h1 {
+            font-size: 2.1rem;
+            line-height: 1.4;
+            letter-spacing: 0.5rem;
+            text-align: center;
+            color: aliceblue;
+            margin-top: 50px;
+        }
+        
+        .maindv {
+            width: 97%;
+            height: 600px;
+            position: absolute;
+            left: 50%;
+            top: 400px;
+            transform: translate(-50%, -50%);
+            background-image: url("https://scontent.fbep2-1.fna.fbcdn.net/v/t39.30808-6/303588718_5566510156747273_4811089755524621830_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0debeb&_nc_ohc=BmxLQ1Y0E0IAX-XgOc5&_nc_ht=scontent.fbep2-1.fna&oh=00_AT8yuTVk8kJrd_3xTMGSn8DtBm3wdCYNo0xNLnQ-aXupmA&oe=631FDA60");
+            background-size: 100% 100%;
+            box-shadow: 1px 2px 10px white;
+            animation: slider 20s infinite linear;
+        }
+        
+        @keyframes slider {
+            0% {
+                background-image: url("https://scontent.fhyd14-1.fna.fbcdn.net/v/t39.30808-6/304993355_5566510116747277_7872648285130604261_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0debeb&_nc_ohc=D2PFW0_SO2QAX9oHUhO&_nc_ht=scontent.fhyd14-1.fna&oh=00_AT9cqxjdYG61Dvbhc2kmmIc-izPKz_CoZaU2NZsSN95HJw&oe=631E41BC");
+            }
+            35% {
+                background-image: url("https://scontent.fbep2-1.fna.fbcdn.net/v/t39.30808-6/302879357_5566509933413962_8060913940157510353_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0debeb&_nc_ohc=MRkFwRAqgIMAX8Fx4EQ&_nc_ht=scontent.fbep2-1.fna&oh=00_AT-B_u4y50uaD12QGpMuasZyl1SJDR5068cfHZJFAZ__sQ&oe=631E6083");
+            }
+            75% {
+                background-image: url("https://scontent.fbep2-1.fna.fbcdn.net/v/t39.30808-6/303588718_5566510156747273_4811089755524621830_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0debeb&_nc_ohc=BmxLQ1Y0E0IAX-XgOc5&_nc_ht=scontent.fbep2-1.fna&oh=00_AT8yuTVk8kJrd_3xTMGSn8DtBm3wdCYNo0xNLnQ-aXupmA&oe=631FDA60");
+            }
+            body {
+                margin: 0;
+                margin-bottom: 25rem;
+            }
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500, 1fr));
+        }
+        
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .img-wrapper>img {
+            display: block;
+            width: 30%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .img-wrapper>.content {
+            position: absolute;
+            inset: 0;
+            font-size: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, .4);
+            display: flex;
+            align-items: center;
+        }
+        
+        .img-wrapper>img,
+        .img-wrapper>.content {
+            transition: 200ms ease-in-out;
+        }
+        
+        .img-wrapper>.content.blur {
+            filter: blur(20px);
+        }
+        
+        .img-wrapper>.content.zoom {
+            transform: scale(1.2);
+        }
+        
+        .img-wrapper>.content.fade {
+            opacity: 0;
+        }
+        
+        .img-wrapper:hover>.content.fade {
+            opacity: 1;
+        }
+        
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            --background-color: hsl(180, 20%, 90%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            padding: 2rem;
+            color: hsla(0, 0%, 0%, .6);
+            background: var(--background-color);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            padding-top: 2rem;
+        }
+        
+        h1+p {
+            font-size: 1.8rem;
+            padding: 2rem 0 3rem;
+        }
+        
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .wrap {
+            margin: 2rem;
+            transform-style: preserve-3d;
+            transform: perspective(100rem);
+            cursor: pointer;
+        }
+        
+        .container {
+            --rX: 0;
+            --rY: 0;
+            --bX: 50%;
+            --bY: 80%;
+            width: 30rem;
+            height: 36rem;
+            border: 1px solid var(--background-color);
+            border-radius: 1.6rem;
+            padding: 4rem;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+            background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
+            background-position: var(--bX) var(--bY);
+            background-size: 40rem auto;
+            box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+            transition: transform .6s 1s;
+        }
+        
+        .container::before,
+        .container::after {
+            content: "";
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid #fff;
+            position: absolute;
+            z-index: 2;
+            opacity: .3;
+            transition: .3s;
+        }
+        
+        .container::before {
+            top: 2rem;
+            right: 2rem;
+            border-bottom-width: 0;
+            border-left-width: 0;
+        }
+        
+        .container::after {
+            bottom: 2rem;
+            left: 2rem;
+            border-top-width: 0;
+            border-right-width: 0;
+        }
+        
+        .container--active {
+            transition: none;
+        }
+        
+        .container--2 {
+            filter: hue-rotate(80deg) saturate(140%);
+        }
+        
+        .container--3 {
+            filter: hue-rotate(160deg) saturate(140%);
+        }
+        
+        .container p {
+            color: hsla(0, 0%, 100%, .6);
+            font-size: 2.2rem;
+        }
+        
+        .wrap:hover .container::before,
+        .wrap:hover .container::after {
+            width: calc(100% - 4rem);
+            height: calc(100% - 4rem);
+        }
+        
+        .abs-site-link {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: hsla(0, 0%, 0%, .6);
+            font-size: 1.6rem;
+        }
+        
+         :root {
+            --background-dark: #2d3548;
+            --text-light: rgba(255, 255, 255, 0.6);
+            --text-lighter: rgba(255, 255, 255, 0.9);
+            --spacing-s: 8px;
+            --spacing-m: 16px;
+            --spacing-l: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 64px;
+            --width-container: 1200px;
+        }
+        
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+        
+        body {
+            height: 100%;
+        }
+        
+        .hero-section {
+            align-items: flex-start;
+            background-image: linear-gradient(15deg, white 0%, white 150%);
+            display: flex;
+            min-height: 100%;
+            justify-content: center;
+            padding: var(--spacing-xxl) var(--spacing-l);
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-column-gap: var(--spacing-l);
+            grid-row-gap: var(--spacing-l);
+            max-width: var(--width-container);
+            width: 100%;
+        }
+        
+        @media(min-width: 540px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media(min-width: 960px) {
+            .card-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .card {
+            list-style: none;
+            position: relative;
+        }
+        
+        .card:before {
+            content: '';
+            display: block;
+            padding-bottom: 150%;
+            width: 100%;
+        }
+        
+        .card__background {
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--spacing-l);
+            bottom: 0;
+            filter: brightness(0.75) saturate(1.2) contrast(0.85);
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform-origin: center;
+            transform: scale(1) translateZ(0);
+            transition: filter 200ms linear, transform 200ms linear;
+        }
+        
+        .card .card__category p {
+            font-weight: bold;
+        }
+        
+        .card:hover .card__background {
+            transform: scale(1.05) translateZ(0);
+        }
+        
+        .card-grid:hover>.card:not(:hover) .card__background {
+            filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+        }
+        
+        .card__content {
+            left: 0;
+            padding: var(--spacing-l);
+            position: absolute;
+            top: 0;
+        }
+        
+        .card__category {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-s);
+            text-transform: uppercase;
+        }
+        
+        .card__heading {
+            color: var(--text-lighter);
+            font-size: 1.9rem;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            line-height: 1.4;
+            word-spacing: 100vw;
+        }
+        h1{
+            color: black;
+        }
+
+        /* footer// */
+
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: open sans; */
+    transition: ease 0.5s;
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+  }
+  
+  
+  
+  footer {
+    background: #5b5b5c;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 0px;
+    /* box-shadow: #434444 0 10px 20px 5px; */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .main {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .heading {
+    margin-bottom: 15px;
+  }
+  .col1 {
+    flex: 1;
+    min-width: 200px;
+  }
+  .col2 {
+    flex: 2;
+    min-width: 300px;
+  }
+  .col3 {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .col1 a {
+    display: inline-block;
+    padding: 7px 0;
+    font-size: 14px;
+  }
+  .col1 a:hover {
+    color: #58bed5;
+  }
+  
+  .col2 .languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .col2 a {
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 3px;
+  }
+  .col2 a:hover {
+    background: #58bed5;
+  }
+  
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+  .col3 ion-icon {
+    font-size: 30px;
+  }
+  .social a:hover ion-icon {
+    color: #5ac1d8;
+  }
+  
+  .terms {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+  }
+  .terms a {
+    color: #7783a0;
+  }
+
+
+
+.navbar {
+    width: auto;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.logo{
+    width: 250px;
+    cursor: pointer;
+    height: 60px;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #ff5d06;
+    position:absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+
+@media only screen and (max-width:700px){
+    navbar ul{
+      width: 100%;
+      background: #fff;
+      position: absolute;
+      top: 75px;
+      right: 0;
+      z-index: 2;
+    }
+  
+    navbar ul li{
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    navbar ul li a{
+      color: #fff;
+    }
+  
+    .menu-icon{
+      display: block;
+    }
+  }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="https://www.sreenidhi.edu.in/assets/images/sreenidhi-logo.png" alt="img" class="logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="placements.html">Placement Details</a></li>
+            <li><a href="companies.html">Companies</a></li>
+            <li><a href="whysnist.html">Why SNISTians?</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fsd.html">FSD Role</a></li>
+            <li><a href="cdc.html">CDC Team</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+    <div class="maindv">
+
+      <!-- <br><br><br><br><br><br> -->
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <section class="hero-section">
+        <div class="card-grid">
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://imageio.forbes.com/specials-images/imageserve/61621970fe19f3f1a90b4d79/0x0.jpg?format=jpg&width=1200)"></div>
+                <div class="card__content">
+                    <p class="card__category" style="font-size: 17px" style="font-weight:bold">HIGHEST PACKAGE</p>
+                    <h3 class="card__heading">38 LPA</h3>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://www.kindpng.com/picc/m/208-2086945_why-us-training-and-placement-hd-png-download.png)"></div>
+                <div class="card__content">
+                    <p class="card__category" style="font-size: 17px" style="font-weight:bold">TOTAL-PLACEMENTS</p>
+                    <h3 class="card__heading">1710</h3>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://www.tapmi.edu.in/wp-content/uploads/2016/02/placement-banner-1.jpg)"></div>
+                <div class="card__content">
+                    <p class="card__category" style="font-size: 17px" style="font-weight:bold">AVERAGE PLACEMENTS</p>
+                    <h3 class="card__heading">5.5 LPA</h3>
+                </div>
+                </li>
+                <a class="card" href="#">
+                    <div class="card__background" style="background-image: url(https://www.careeranna.com/articles/wp-content/uploads/2019/01/PLACEMENT-300x300.jpg)"></div>
+                    <div class="card__content">
+                        <p class="card__category" style="font-size: 17px" style="font-weight:bold">Placed students percentage</p>
+                        <h3 class="card__heading">87%</h3>
+                    </div>
+                </a>
+                <div>
+    </section>
+    <h1>B.Tech Student Placements Details of 2021-2022 Batch</h1><br><br>
+    <iframe height=500 width=700 src="Placements.pdf" frameborder="0"></iframe><br><br><br><br>
+    <h1>M.Tech & MBA Student Placements Details of 2021-2022 Batch</h1>
+    <iframe height=500 width=700 src="M.tech-Mba Placements.pdf" frameborder="0"></iframe><br><br><br><br>
+    <h1>Students Placement Information for the Academic Year 2017-2021:</h1>
+    <iframe height=500 width=700 src="2017-2021-Placements-Details.pdf" frameborder="0"></iframe>
+    </div>
+    <h1>Placements,SNIST</h1>
+    <p>Sreenidhi Institute of Science and Technology (SNIST) is known for its quality of education and highly talented students. The institute attracts the cream of the student community. It believes that the true potential of such students cannot be realized
+        through academics alone. The institute plays a crucial role in promoting the managerial skills and core values, all of which cumulatively helps in transforming students into balanced individuals. SNIST is built by highly committed and quality-conscious
+        visionaries who are dedicated to making a positive and profound impact on the way education is imparted in the country. The goal of the institute is to develop students into integrated personalities with a blend of Academic & Extracurricular abilities.</p>
+    <h2>Our college is running the following UG (B.Tech) & PG (M.Tech/MBA) courses: </h2>
+    <p>1.Computer Science Engineering (CSE)</p>
+    <p>2.Computer Science & Information Technology (CSIT)</p>
+    <p>3. Computer Engineering (ECM)</p>
+    <p>4.Electronics & Communication Engineering (ECE)</p>
+    <p>5.Electrical & Electronics Engineering (EEE)</p>
+    <p>6.Mechanical Engineering (ME)</p>
+    <p>7.Computer Networks and Information Security (CNIS)</p>
+    <p>8.Electrical Power System (EEE)</p>
+    <p>9.Master of Business Administration (MBA) at the PG level</p><br>
+    <p>SNIST is the first College under JNT University to be accredited by the National Board of Accreditation (NBA) of AICTE and is the only College in the country to be accredited within 5 years of existence.</p>
+    <h2>Placements Overview</h2>
+    <p>The Training and Placement Cell of SNIST has emerged as one of the most happening destinations for many national and multinational organizations for recruiting fresh talent nurtured in the campus. In our journey towards excellence, the management,
+        faculty and the placement department work in close coordination to achieve the desired targets of student employment. Regular mentoring and one-on-one counselling are provided to students facing difficulty in the recruitment process.</p>
+    <h2>The key takeaways from the year 2014 to 2020 are as follows:</h2>
+    <p>1.Placements over the last 7 years have been growing consistently with an average growth rate of 42.9%.
+    </p>
+    <p>2.Even in times of recession caused by Lehman effect (2013, 2014, and 2015), SNIST maintained a strong recruitment rate of 593/year. (Recession caused in 2008 in USA but India worst affected in 2013 to 2915 according to Economic Times).
+    </p>
+    <p>3.Wipro, Cognizant, and Infosys consistently hired form SNIST in the last 10 consecutive years.
+    </p>
+    <p>4.Accenture is the biggest recruiter for SNIST since 2017 with an average of 395 recruitments/ year.
+    </p>
+    <p>5.Every year, new companies are visiting SNIST including the ones which are latest in innovation and market disruption. Ex: Uber - India visited SNIST in 2017 as soon as it became popular in India in 2016. Amazon visited SNIST in 2014 in the similar
+        way. This bears testimony to the fact that SNIST is of high perference for both well established and upcoming MNCs.
+    </p>
+    <br><br>
+    </div>
+
+    <footer>
+        <div class="main">
+          <div class="col1">
+            <h3 class="heading">
+              About Us
+            </h3>
+            <ul>
+              <li>
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <!-- <li>
+                <a href="placements.html">
+                  Placements
+                </a>
+              </li> -->
+              <li>
+                <a href="companies.html">
+                  Companies
+                </a>
+              </li>
+              <li>
+                <a href="fsd.html">
+                  FSD Role
+                </a>
+              </li>
+              <li>
+                <a href="cdc.html">
+                  CDC Team
+                </a>
+              </li>
+              <li>
+                <a href="contactus.html">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+      
+          <div class="col2">
+            <h3 class="heading">
+              Address
+            </h3>
+            <div class="languages">
+              <a href="#">Sreenidhi Institute of Science & Technology</a>
+              <a href="#">Yamnampet, Ghatkesar</a>
+              <a href="#">Hyderabad - 501 301, Telangana</a>
+              <a href="#">info_placement@sreenidhi.edu.in</a>
+              <a href="#">Phone: +91 40 2763 1236 / 2764 0395</a>
+              <a href="#">Fax: +91 40 2764 0394 / 2764 0394</a>
+              <!-- <a href="#">Nederlands</a>
+              <a href="#">Polnisch</a>
+              <a href="#">Português</a>
+              <a href="#">pyccknṅ</a>
+              <a href="#">Tiéng Viêt</a>
+              <a href="#">Türkçe</a> -->
+            </div>
+          </div>
+      
+          <div class="col3">
+            <h3 class="heading">
+              Follow Us
+            </h3>
+            <div class="social">
+              <a href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- <p class="terms">
+          <a href="#">Terms of purchase</a>
+          <a href="#">Security and privacy</a>
+          <a href="#">Newsletter</a>
+        </p> -->
+      </footer>
+      
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

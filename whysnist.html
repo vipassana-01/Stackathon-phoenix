@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why SNISTians?</title>
+  <style type="text/css" rel="StyleSheet"> 
+body{
+    background-image: url("./bg-page4.jpeg");
+}
+  .a
+  {
+    
+     text-transform: capitalize;
+     font-weight: 100;
+     font-family: 'Verdana', sans-serif;
+     margin:20px auto;
+     text-align: center;
+
+  }
+  .d
+  {
+     text-transform: capitalize;
+     font-weight: 100;
+     font-family: 'Garamond', monospace;
+     margin:20px auto;
+     text-align: center;
+     background-color: #4272c0;
+
+  }
+ .b{
+    background-color: azure;
+ }
+  .c {
+    background-color: #ffe5e5;
+    text-align: left;
+    border-radius: 15px;
+    border-color: #0e387a;
+    border-width: 2px;
+    border-style: solid;
+    position: relative;
+    color: #071a3a;
+    padding: 5px;
+    margin-left: 35px;
+    margin-right: 35px;
+ }
+ ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+  .navbar {
+    width: auto;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.logo{
+    width: 250px;
+    cursor: pointer;
+    height: 60px;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #ff5d06;
+    position:absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+
+@media only screen and (max-width:700px){
+  navbar ul{
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
+  }
+
+  navbar ul li{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  navbar ul li a{
+    color: #fff;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+}
+
+
+  /* footer// */
+
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: open sans; */
+  transition: ease 0.5s;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  list-style-type: none;
+}
+
+/* body {
+  background: #5b5b5c;
+} */
+
+footer {
+  background: #5b5b5c;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 0px;
+  /* box-shadow: #434444 0 10px 20px 5px; */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  color: white;
+}
+.heading {
+  margin-bottom: 15px;
+  color: white;
+}
+.col1 {
+  flex: 1;
+  min-width: 200px;
+  color: white;
+}
+.col2 {
+  flex: 2;
+  min-width: 300px;
+  color: white;
+}
+.col3 {
+  flex: 1;
+  min-width: 200px;
+  color: white;
+}
+
+.col1 a {
+  display: inline-block;
+  padding: 7px 0;
+  font-size: 14px;
+  color: white;
+}
+.col1 a:hover {
+  color: #58bed5;
+}
+
+.col2 .languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+}
+.col2 a {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: white;
+}
+.col2 a:hover {
+  background: #58bed5;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  color: white;
+}
+.col3 ion-icon {
+  font-size: 30px;
+  color: white;
+}
+.social a:hover ion-icon {
+  color: #5ac1d8;
+}
+
+.terms {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: white;
+}
+.terms a {
+  color: #7783a0;
+  color: white;
+}
+
+
+  </style>
+
+</head>
+<body>
+    
+
+    <div class="navbar">
+        <img src="https://www.sreenidhi.edu.in/assets/images/sreenidhi-logo.png" alt="img" class="logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="placements.html">Placement Details</a></li>
+            <li><a href="companies.html">Companies</a></li>
+            <li><a href="whysnist.html">Why SNISTians?</a></li>
+            <li><a href="fsd.html">FSD Role</a></li>
+            <li><a href="cdc.html">CDC Team</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="a">
+        <div class="d"> 
+            <h1 style="color:rgb(4, 4, 26);"> 
+                Why SNISTians?
+            </h1> 
+        </div>
+        
+            <h2> 
+                The answer is straight and simple, Corporate firms are inclined to recruit from SNIST for the following reasons:</h2>
+                <div class ="c">
+                <ol>
+                    <li>We follow a stringent student selection procedure on the basis of merit.</li>
+                    <li>Our world class curriculum is constantly updated to match the industry requirements.</li>
+                    <li>Our highly qualified faculty members with doctoral degrees are actively involved in research and journal publications.
+                    </li>
+                    <li>Our Internship Programmes ensure that every student spends over 7 months working in the industry even before graduation ensuring real life applications of their course</li>
+                    <li>We nurture students in every field of their interest. Soft-skills development is an integral part of classroom experience through presentations and open-ended learning techniques.</li>
+                    <li>Students are given further avenues to express themselves and develop skills beyond academics through a variety of extracurricular activities including student managed clubs and events.</li>
+                    <li>Strong online presence Social networking has become the primary way that people communicate. But it is a double-edged sword </li>
+                    <li>Enthusiasm,initiative and consistent effort for betterment in every aspect to take initiative on the job, you can count on being noticed and rewarded.</li>
+                    <li>Good cultural fit the way we make different sorts of people to connect is far beyond the bars that one needed and ready to fit,work and excel in the industry </li>
+                    <li>Multitaskers who thrive on variety of projects such individuals demonstrates a passion for learning new things and enjoys a variety of work, chances that those individuals are ambitious and inquisitive -- two qualities that are critical to success and advancement."</li>
+                  </ol>
+                  </div>
+            
+                  <footer>
+                    <div class="main">
+                      <div class="col1">
+                        <h3 class="heading">
+                          About Us
+                        </h3>
+                        <ul>
+                          <li>
+                            <a href="index.html">
+                              Home
+                            </a>
+                          </li>
+                          <!-- <li>
+                            <a href="placements.html">
+                              Placements
+                            </a>
+                          </li> -->
+                          <li>
+                            <a href="companies.html">
+                              Companies
+                            </a>
+                          </li>
+                          <li>
+                            <a href="fsd.html">
+                              FSD Role
+                            </a>
+                          </li>
+                          <li>
+                            <a href="cdc.html">
+                              CDC Team
+                            </a>
+                          </li>
+                          <li>
+                            <a href="contactus.html">
+                              Contact us
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                  
+                      <div class="col2">
+                        <h3 class="heading">
+                          Address
+                        </h3>
+                        <div class="languages">
+                          <a href="#">Sreenidhi Institute of Science & Technology</a>
+                          <a href="#">Yamnampet, Ghatkesar</a>
+                          <a href="#">Hyderabad - 501 301, Telangana</a>
+                          <a href="#">info_placement@sreenidhi.edu.in</a>
+                          <a href="#">Phone: +91 40 2763 1236 / 2764 0395</a>
+                          <a href="#">Fax: +91 40 2764 0394 / 2764 0394</a>
+                          <!-- <a href="#">Nederlands</a>
+                          <a href="#">Polnisch</a>
+                          <a href="#">Português</a>
+                          <a href="#">pyccknṅ</a>
+                          <a href="#">Tiéng Viêt</a>
+                          <a href="#">Türkçe</a> -->
+                        </div>
+                      </div>
+                  
+                      <div class="col3">
+                        <h3 class="heading">
+                          Follow Us
+                        </h3>
+                        <div class="social">
+                          <a href="#">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                          </a>
+                          <a href="#">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                          </a>
+                          <a href="#">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- <p class="terms">
+                      <a href="#">Terms of purchase</a>
+                      <a href="#">Security and privacy</a>
+                      <a href="#">Newsletter</a>
+                    </p> -->
+                  </footer>
+                  
+                  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>      
+    
+</body>
+</html>
